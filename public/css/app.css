@@ -10,7 +10,38 @@ body {
 }
 
 .memory__section {
-  padding-top: 3.125rem;
+  padding-top: 6.125rem;
+  display: flex;
+  flex-flow: column wrap;
+  align-items: start;
+}
+.memory__section .section__logo {
+  width: 10.5rem;
+  height: 10.5rem;
+  padding-bottom: 5rem;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: start;
+  align-self: center;
+}
+.memory__section .section__logo img {
+  width: 8.25rem;
+  position: relative;
+}
+.memory__section .section__logo .logo__shape {
+  position: absolute;
+  transform: rotate(45deg);
+  background-color: white;
+  width: 12.5rem;
+  height: 12.5rem;
+  backdrop-filter: blur(5px);
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 2rem;
+  box-shadow: 2.1875rem 2.1875rem 4.25rem 0rem rgb(107, 107, 249), inset -10px -10px 16px 0px rgba(107, 107, 249, 0.6), inset 0px 11px 28px 0px rgb(255, 255, 255);
+}
+.memory__section .section__title {
+  margin: 1rem 0 0.5rem 0;
 }
 .memory__section .section__form {
   color: #576d95;
@@ -67,7 +98,8 @@ body {
 .memory__section .section__buttons span {
   font-weight: 700;
   color: rgb(237, 237, 240);
-  opacity: 0.9;
+  opacity: 0.85;
+  font-size: 1rem;
 }
 
 /*# sourceMappingURL=app.css.map */

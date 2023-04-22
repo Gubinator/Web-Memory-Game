@@ -11,8 +11,13 @@
 <body>
     
     <div class="memory__section">
+        <div class="section__logo">
+            <div class="logo__shape"></div>
+            <img src="{{url('images/memory-logo.png')}}" alt="Memory image">
+        </div>
         <h1 class="section__title">Memory game</h1>
-        <form action="" method="POST" class="section__form">
+        <form action="{{route('terms.add')}}" method="POST" class="section__form">
+            @csrf
             <h2>Add term</h2>
             <div class="form__title">
                 <label for="term_title">Title</label>
@@ -26,13 +31,17 @@
                 <label for="image">Image</label>
                 <input type="file" name="image_path" id="">
             </div>
+            <div class="form__button--submit">
+                <input type="hidden" name="_method" value="PUT">
+                <button type="submit">Insert</button>
+            </div>
         </form>
         <div class="section__buttons">
             <button class="button--show"><span>Show terms</span></button>
             <button class="button--play"><span>Play</span></button>
         </div>
         <div class="section__terms">
-            
+
         </div>
     </div>
 </body>
