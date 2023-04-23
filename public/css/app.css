@@ -1,19 +1,271 @@
 @import url("https://fonts.googleapis.com/css2?family=Work+Sans");
+button.memory__facedown--lower {
+  padding: 0;
+  margin: 0;
+}
+
+.memory__facedown--lower {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  box-shadow: 0px 8px 20px rgba(68, 68, 68, 0.4);
+}
+.memory__facedown--lower .facedown__logo {
+  position: absolute;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  transform: scale(1.1);
+}
+.memory__facedown--lower .facedown__logo {
+  position: relative;
+  z-index: 1;
+}
+
+button.memory__facedown--upper {
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+}
+
+.facedown__background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.memory__facedown--upper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  box-shadow: 0px 8px 20px rgba(68, 68, 68, 0.4);
+}
+.memory__facedown--upper .facedown__logo {
+  position: absolute;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  transform: scale(1.1);
+}
+.memory__facedown--upper .facedown__logo {
+  position: relative;
+  z-index: 1;
+}
+
+button.memory__upside--lower {
+  padding: 0;
+  margin: 0;
+}
+
+.memory__upside--lower {
+  width: 100%;
+  height: 100%;
+}
+.memory__upside--lower img {
+  width: 2rem;
+}
+.memory__upside--lower .facedown__wrapper {
+  width: 100%;
+  height: 100%;
+  box-shadow: 0px 8px 20px rgba(68, 68, 68, 0.4);
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.8rem;
+}
+.memory__upside--lower .facedown__wrapper .shape__title {
+  height: 30px;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 0.8rem;
+  line-height: 150%;
+  display: flex;
+  flex-flow: row wrap;
+  align-content: center;
+  justify-content: center;
+  color: #576d95;
+  padding-bottom: 0.25rem;
+}
+.memory__upside--lower .facedown__wrapper .shape__answer {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 0.5rem;
+  line-height: 150%;
+  width: 9.625rem;
+  text-align: center;
+  padding-bottom: 0.625rem;
+  color: #272527;
+}
+.memory__upside--lower .facedown__wrapper .shape__checkmark {
+  position: absolute;
+  bottom: 0;
+  padding-bottom: 1.375rem;
+  display: none;
+}
+.memory__upside--lower .facedown__logo--active {
+  border: 1px solid #576d95;
+}
+
+button.memory__upside--upper {
+  padding: 0;
+  margin: 0;
+}
+
+.memory__upside--upper {
+  width: 100%;
+  height: 100%;
+}
+.memory__upside--upper img {
+  width: 2rem;
+}
+.memory__upside--upper .facedown__wrapper {
+  width: 100%;
+  height: 100%;
+  box-shadow: 0px 8px 20px rgba(68, 68, 68, 0.4);
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.8rem;
+}
+.memory__upside--upper .facedown__wrapper .shape__art {
+  padding-top: 1.8125rem;
+}
+.memory__upside--upper .facedown__wrapper span {
+  margin-top: 0;
+  text-transform: uppercase;
+  height: 1.5rem;
+  font-weight: 700;
+  font-size: 0.7rem;
+  line-height: 150%;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-content: center;
+  color: #576d95;
+}
+.memory__upside--upper .facedown__wrapper .shape__checkmark {
+  padding-bottom: 1.375rem;
+  display: none;
+  margin-top: auto;
+}
+.memory__upside--upper .facedown__logo--active {
+  border: 1px solid #576d95;
+}
+
+.section__play {
+  padding: 1.5rem 1.5rem 1.5rem 1.5rem;
+  display: flex;
+  flex-flow: column wrap;
+  align-content: center;
+  backdrop-filter: blur(5px);
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 2rem;
+  box-shadow: 2.1875rem 2.1875rem 4.25rem 0rem rgb(107, 107, 249), inset -10px -10px 16px 0px rgba(107, 107, 249, 0.6), inset 0px 11px 28px 0px rgb(255, 255, 255);
+  row-gap: 1.5rem;
+}
+.section__play .cards--upper,
+.section__play .cards--lower {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+  /*.card__container:hover{
+              transform: rotateY(180deg);
+            }*/
+}
+.section__play .cards--upper .card__container,
+.section__play .cards--lower .card__container {
+  position: relative;
+  transition: transform 0.75s;
+  transform-style: preserve-3d;
+  width: 5rem;
+  height: 6.25rem;
+  border: 1px;
+  border-radius: 2px;
+}
+.section__play .cards--upper .card__container .facedown,
+.section__play .cards--upper .card__container .upside,
+.section__play .cards--lower .card__container .facedown,
+.section__play .cards--lower .card__container .upside {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  border: none;
+  border-radius: 0.8rem;
+}
+.section__play .cards--upper .card__container .upside,
+.section__play .cards--lower .card__container .upside {
+  transform: rotateY(180deg);
+}
+
+.container__reset {
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+}
+.container__reset h3 {
+  margin: 0;
+  margin-top: 3.75rem;
+  font-weight: 700;
+  font-size: 0.5rem;
+  line-height: 150%;
+  height: 3.6875rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container__reset button {
+  margin-top: 3rem;
+  text-transform: uppercase;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  width: 13.8125rem;
+  height: 3rem;
+  background: #576d95;
+  border-radius: 0.3125rem;
+  font-weight: 700;
+  font-size: 0.5rem;
+  line-height: 150%;
+  color: #FEFEFE;
+}
+
+.rotate-flip {
+  transform: rotateY(180deg);
+}
+
+.card--correct {
+  border: 1px solid #576d95;
+  border-radius: 0.625rem;
+}
+
 body {
   font-family: "Work Sans", sans-serif;
   background: rgb(107, 107, 249);
   background-image: linear-gradient(180deg, rgb(107, 107, 249) 0%, rgb(194, 194, 255) 100%);
-  height: 100vh;
+  height: 200vh;
   display: flex;
+  flex-flow: row wrap;
   justify-content: center;
-  overflow-y: hidden;
 }
 
 .memory__section {
   padding-top: 6.125rem;
   display: flex;
   flex-flow: column wrap;
-  align-items: start;
+  align-items: center;
 }
 .memory__section .section__logo {
   width: 10.5rem;
@@ -40,40 +292,51 @@ body {
   border-radius: 2rem;
   box-shadow: 2.1875rem 2.1875rem 4.25rem 0rem rgb(107, 107, 249), inset -10px -10px 16px 0px rgba(107, 107, 249, 0.6), inset 0px 11px 28px 0px rgb(255, 255, 255);
 }
-.memory__section .section__title {
+.memory__section .section__form--add {
+  flex-flow: column wrap;
+  display: flex;
+  align-self: center;
+}
+.memory__section .section__form--add .section__title {
   margin: 1rem 0 0.5rem 0;
 }
-.memory__section .section__form {
+.memory__section .section__form--add .section__form {
   color: #576d95;
   font-weight: 600;
   display: flex;
   flex-flow: column wrap;
   justify-content: center;
   row-gap: 0.5rem;
-  padding: 0rem 1rem 0rem 1rem;
+  padding: 0rem 1.5rem 0rem 1rem;
   height: 12.5rem;
   backdrop-filter: blur(5px);
   background-color: rgba(255, 255, 255, 0.9);
   border-radius: 2rem;
   box-shadow: 2.1875rem 2.1875rem 4.25rem 0rem rgb(107, 107, 249), inset -10px -10px 16px 0px rgba(107, 107, 249, 0.6), inset 0px 11px 28px 0px rgb(255, 255, 255);
 }
-.memory__section .section__form h2 {
+.memory__section .section__form--add .section__form h2 {
   margin: 0;
   padding-bottom: 0.5rem;
 }
-.memory__section .section__form input {
+.memory__section .section__form--add .section__form input, .memory__section .section__form--add .section__form textarea {
   font-weight: 500;
   color: #57687f;
   margin-left: 1rem;
   border: none;
   background-color: transparent;
   box-shadow: inset -5px 20px 30px -10px rgba(194, 194, 243, 0.4);
+  resize: none;
   border-radius: 0.3125rem;
 }
-.memory__section .section__form input:focus {
+.memory__section .section__form--add .section__form input:focus, .memory__section .section__form--add .section__form textarea:focus {
   outline: none;
 }
-.memory__section h1 {
+.memory__section .section__form--add .section__form .form__description {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+}
+.memory__section .section__form--add h1 {
   opacity: 0.8;
   font-size: 2.125rem;
   font-weight: 700;
@@ -81,8 +344,11 @@ body {
 }
 .memory__section .section__buttons {
   display: flex;
-  column-gap: 1rem;
+  flex-flow: row wrap;
+  justify-content: center;
+  column-gap: 2rem;
   padding-top: 1rem;
+  padding-bottom: 1rem;
 }
 .memory__section .section__buttons .button--show,
 .memory__section .section__buttons .button--play {

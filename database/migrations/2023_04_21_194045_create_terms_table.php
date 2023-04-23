@@ -15,7 +15,6 @@ return new class extends Migration
             $table->increments('id');
             $table->string('title');
             $table->string('description');
-            $table->string('image_path');
         });
     }
 
