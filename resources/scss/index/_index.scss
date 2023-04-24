@@ -1,19 +1,86 @@
 body {
+    padding-bottom: 5rem;
     font-family: $font-family-Work;
-    background: rgb(107, 107, 249);
-    background-image: linear-gradient(180deg, rgba(107, 107, 249, 1) 0%, rgba(194, 194, 255, 1) 100%);
-    height: 200vh;
+    min-height: 100vh;
+    background-image: linear-gradient(180deg, rgb(88, 88, 246) 0%, rgba(194, 194, 255, 1) 100%);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-size: cover;
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
 }
 
+.terms__section{
+    padding-top: 5.125rem;
+    display: flex;
+    flex-flow: column;
+
+    .button--back{
+            cursor: pointer;
+            height: 4.25rem;
+            width: 8.25rem;
+            border: none;
+            border-radius: 1.4375rem;
+            background-color: transparent;
+            backdrop-filter: blur(5px);
+            box-shadow: rgba(107, 107, 249, 0.5) 35px 35px 68px 0px, rgba(107, 107, 249, 0.7) -5px -5px 16px 0px inset, rgb(255, 255, 255) -5px -4px 20px 0px inset; 
+            
+            span{
+                font-weight: 700;
+                color: rgb(237, 237, 240);
+                opacity: 0.85;
+                font-size: 1rem;
+            }
+    }
+    .section__table{
+        backdrop-filter: blur(5px);
+        background-color: rgba(255, 255, 255, 0.9);
+        border-radius: 2rem;
+        box-shadow: 2.1875rem 2.1875rem 4.25rem 0rem rgba(107, 107, 249, 01), inset -10px -10px 16px 0px rgba(107, 107, 249, 0.6), inset 0px 11px 28px 0px rgb(255, 255, 255);
+        min-height: 8.5rem;
+        width: 12rem;
+        display: flex;
+        flex-flow: column wrap;
+        justify-content: center;
+        padding: 0rem 1rem 0rem 1rem;
+        list-style: none;
+        color: #576d95;
+        li{
+            width: 11rem;
+        }
+
+        
+    form {
+        button{
+            height: 2.5rem;
+            width: 4rem;
+            border: none;
+            border-radius: 1rem;
+            background-color: transparent;
+            background-color: #718dc1;
+            backdrop-filter: blur(5px);
+            box-shadow:  rgb(49, 52, 129) -5px -5px 16px 0px inset, rgb(192, 195, 237) -5px -4px 20px 0px inset, 1.1875rem 0.975rem 2.25rem 0rem rgba(152, 152, 251, 0.885); 
+            font-weight: 700;
+            color: rgba(255, 255, 255, 0.885);
+            margin-top: 0.5rem;
+        }
+    }
+    }
+
+}
 
 .memory__section {
-    padding-top: 6.125rem;
+    padding-top: 5.125rem;
     display: flex;
     flex-flow: column wrap;
     align-items: center;
+
+    .section__error{
+        padding-bottom: 3rem;
+        color: #27374c;
+        font-weight: 500;
+    }
 
     .section__logo{
         width: 10.5rem;
@@ -88,6 +155,20 @@ body {
                 align-items: center;
             }
             
+            .form__button--submit{
+                button{
+                    height: 2.5rem;
+                    width: 4rem;
+                    border: none;
+                    border-radius: 1rem;
+                    background-color: transparent;
+                    background-color: #718dc1;
+                    backdrop-filter: blur(5px);
+                    box-shadow:  rgb(49, 52, 129) -5px -5px 16px 0px inset, rgb(192, 195, 237) -5px -4px 20px 0px inset, 1.1875rem 0.975rem 2.25rem 0rem rgba(152, 152, 251, 0.885); 
+                    font-weight: 700;
+                    color: rgba(255, 255, 255, 0.885);
+                }
+            }
         }
     
         h1 {
@@ -103,8 +184,8 @@ body {
         flex-flow: row wrap;
         justify-content: center;
         column-gap: 2rem;
-        padding-top: 1rem;
-        padding-bottom: 1rem;
+        padding-top: 1.25rem;
+        padding-bottom: 1.25rem;
         .button--show,
         .button--play {
             cursor: pointer;

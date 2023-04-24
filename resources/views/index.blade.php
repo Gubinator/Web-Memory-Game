@@ -9,11 +9,23 @@
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     <script src="{{ asset('js/jquery.js') }}" defer></script>
     <script src="{{ asset('js/index.js') }}" defer></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     
 </head>
 <body>
-    
+
+    <div class="terms__section">
+        <button class="button--back"><span>Back</span></button>
+        @foreach ($terms as $term)
+            @include('partials.terms_section_partial', ['title'
+            => $term->title, 'description' => $term->description, 'id' => $term->id])
+        @endforeach
+    </div>
+
     <div class="memory__section">
+        @if(session('error'))
+        <div class="section__error">{{ session('error') }}</div>
+        @endif
         <div class="section__logo">
             <div class="logo__shape"></div>
             <img src="{{asset('images/memory-logo.png')}}" alt="Memory image">
@@ -59,11 +71,48 @@
             @endforeach
           </div>
           <div class="container__reset" content="reset">
-            <h3>Uspješno si riješio igru memory.</h3>
-            <button>zaigraj ponovo</button>
+            <h3>You successfully finished a game.</h3>
+            <button>Play again</button>
           </div>
         </div>
     </div>
 
 </body>
+
+<script>
+$(".terms__section").hide();
+$(".section__play").hide();
+
+$(".button--play").click( function() {
+    @if ($terms->count()>0) {
+        $(".button--play").fadeToggle();
+        setTimeout(() => {
+            $(".section__play").fadeToggle();
+        }, 600);
+    }
+    @else 
+        alert("There are no terms inserted.");
+    @endif
+});
+
+$(".button--show").click( function(){
+    @if ($terms->count()>0) {
+        $(".memory__section").fadeToggle();
+        setTimeout(() => {
+            $(".terms__section").fadeToggle();
+        }, 600);
+    }
+    @else 
+        alert("There are no terms inserted.");
+    @endif
+})
+
+$(".button--back").click( function(){
+    $(".terms__section").fadeToggle();
+    setTimeout(() => {
+        $(".memory__section ").fadeToggle();
+    }, 600);
+})
+</script>
+
 </html>

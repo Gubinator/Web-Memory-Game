@@ -178,6 +178,7 @@ button.memory__upside--upper {
   display: flex;
   flex-wrap: wrap;
   gap: 1.25rem;
+  justify-content: space-evenly;
   /*.card__container:hover{
               transform: rotateY(180deg);
             }*/
@@ -216,9 +217,9 @@ button.memory__upside--upper {
 }
 .container__reset h3 {
   margin: 0;
-  margin-top: 3.75rem;
   font-weight: 700;
-  font-size: 0.5rem;
+  font-size: 1rem;
+  color: #576d95;
   line-height: 150%;
   height: 3.6875rem;
   display: flex;
@@ -226,20 +227,20 @@ button.memory__upside--upper {
   align-items: center;
 }
 .container__reset button {
-  margin-top: 3rem;
-  text-transform: uppercase;
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
   align-items: center;
-  width: 13.8125rem;
-  height: 3rem;
-  background: #576d95;
-  border-radius: 0.3125rem;
+  height: 2.5rem;
+  width: 8rem;
+  border: none;
+  border-radius: 1rem;
+  background-color: transparent;
+  background-color: #718dc1;
+  backdrop-filter: blur(5px);
+  box-shadow: rgb(49, 52, 129) -5px -5px 16px 0px inset, rgb(192, 195, 237) -5px -4px 20px 0px inset, 1.1875rem 0.975rem 2.25rem 0rem rgba(152, 152, 251, 0.885);
   font-weight: 700;
-  font-size: 0.5rem;
-  line-height: 150%;
-  color: #FEFEFE;
+  color: rgba(255, 255, 255, 0.885);
 }
 
 .rotate-flip {
@@ -252,20 +253,80 @@ button.memory__upside--upper {
 }
 
 body {
+  padding-bottom: 5rem;
   font-family: "Work Sans", sans-serif;
-  background: rgb(107, 107, 249);
-  background-image: linear-gradient(180deg, rgb(107, 107, 249) 0%, rgb(194, 194, 255) 100%);
-  height: 200vh;
+  min-height: 100vh;
+  background-image: linear-gradient(180deg, rgb(88, 88, 246) 0%, rgb(194, 194, 255) 100%);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-size: cover;
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
 }
 
+.terms__section {
+  padding-top: 5.125rem;
+  display: flex;
+  flex-flow: column;
+}
+.terms__section .button--back {
+  cursor: pointer;
+  height: 4.25rem;
+  width: 8.25rem;
+  border: none;
+  border-radius: 1.4375rem;
+  background-color: transparent;
+  backdrop-filter: blur(5px);
+  box-shadow: rgba(107, 107, 249, 0.5) 35px 35px 68px 0px, rgba(107, 107, 249, 0.7) -5px -5px 16px 0px inset, rgb(255, 255, 255) -5px -4px 20px 0px inset;
+}
+.terms__section .button--back span {
+  font-weight: 700;
+  color: rgb(237, 237, 240);
+  opacity: 0.85;
+  font-size: 1rem;
+}
+.terms__section .section__table {
+  backdrop-filter: blur(5px);
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 2rem;
+  box-shadow: 2.1875rem 2.1875rem 4.25rem 0rem rgb(107, 107, 249), inset -10px -10px 16px 0px rgba(107, 107, 249, 0.6), inset 0px 11px 28px 0px rgb(255, 255, 255);
+  min-height: 8.5rem;
+  width: 12rem;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  padding: 0rem 1rem 0rem 1rem;
+  list-style: none;
+  color: #576d95;
+}
+.terms__section .section__table li {
+  width: 11rem;
+}
+.terms__section .section__table form button {
+  height: 2.5rem;
+  width: 4rem;
+  border: none;
+  border-radius: 1rem;
+  background-color: transparent;
+  background-color: #718dc1;
+  backdrop-filter: blur(5px);
+  box-shadow: rgb(49, 52, 129) -5px -5px 16px 0px inset, rgb(192, 195, 237) -5px -4px 20px 0px inset, 1.1875rem 0.975rem 2.25rem 0rem rgba(152, 152, 251, 0.885);
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.885);
+  margin-top: 0.5rem;
+}
+
 .memory__section {
-  padding-top: 6.125rem;
+  padding-top: 5.125rem;
   display: flex;
   flex-flow: column wrap;
   align-items: center;
+}
+.memory__section .section__error {
+  padding-bottom: 3rem;
+  color: #27374c;
+  font-weight: 500;
 }
 .memory__section .section__logo {
   width: 10.5rem;
@@ -336,6 +397,18 @@ body {
   flex-flow: row wrap;
   align-items: center;
 }
+.memory__section .section__form--add .section__form .form__button--submit button {
+  height: 2.5rem;
+  width: 4rem;
+  border: none;
+  border-radius: 1rem;
+  background-color: transparent;
+  background-color: #718dc1;
+  backdrop-filter: blur(5px);
+  box-shadow: rgb(49, 52, 129) -5px -5px 16px 0px inset, rgb(192, 195, 237) -5px -4px 20px 0px inset, 1.1875rem 0.975rem 2.25rem 0rem rgba(152, 152, 251, 0.885);
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.885);
+}
 .memory__section .section__form--add h1 {
   opacity: 0.8;
   font-size: 2.125rem;
@@ -347,8 +420,8 @@ body {
   flex-flow: row wrap;
   justify-content: center;
   column-gap: 2rem;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
 }
 .memory__section .section__buttons .button--show,
 .memory__section .section__buttons .button--play {

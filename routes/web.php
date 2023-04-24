@@ -14,10 +14,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-});
+Route::get('/',  [TermController::class, 'index']);
 
 Route::get('/index', [TermController::class, 'index']);
 
 Route::put('/index', [TermController::class, 'addTerm'])->name('terms.add');    
+
+Route::delete('/index/{id}', [TermController::class, 'deleteTerm'])->name('terms.delete');

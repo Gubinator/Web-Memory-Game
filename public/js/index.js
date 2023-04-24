@@ -1,6 +1,4 @@
-console.log("2ds");
-var auto = document.getElementsByClassName('.memory__section');
-console.log(auto);
+
 
 var memoryUpperID;
   var memoryLowerID;
@@ -16,7 +14,7 @@ var memoryUpperID;
   
   $(".cards--upper .card__container ").click(function(){
       if($(this).hasClass('disabled')) {
-      event.preventDefault(); // prevent default behavior of click event
+      e.preventDefault(); // prevent default behavior of click event
     } else{
       count1=0;
       memoryUpperID=$(this).attr("id");
@@ -39,10 +37,8 @@ var memoryUpperID;
           if(memoryLowerID===memoryUpperID){
               $(this).find(".facedown__wrapper").toggleClass("card--correct");
               $(this).find(".memory__upside--upper").prop("disabled", true);
-              $(this).find(".shape__checkmark").fadeToggle();
               $(".cards--lower").find("#"+memoryLowerID).find(".facedown__wrapper").toggleClass("card--correct");
               $(".cards--lower").find("#"+memoryLowerID).find(".memory__upside--lower").prop("disabled", true);
-              $(".cards--lower").find("#"+memoryLowerID).find(".shape__checkmark").fadeToggle();
               correctPairs++;
               enableBothUnactive();
               if(correctPairs==upperCards.length){
@@ -78,7 +74,7 @@ var memoryUpperID;
   
   $(".cards--lower .card__container ").click(function(){
       if ($(this).hasClass('disabled')) {
-      event.preventDefault(); // prevent default behavior of click event
+      e.preventDefault(); // prevent default behavior of click event
       } else{
       memoryLowerID=$(this).attr("id");
       count2=0;
@@ -104,10 +100,8 @@ var memoryUpperID;
           if(memoryLowerID===memoryUpperID){
               $(this).find(".facedown__wrapper").toggleClass("card--correct");
               $(this).find(".memory__upside--upper").prop("disabled", true);
-              $(this).find(".shape__checkmark").fadeToggle();
               $(".cards--upper").find("#"+memoryUpperID).find(".facedown__wrapper").toggleClass("card--correct");
               $(".cards--upper").find("#"+memoryUpperID).find(".memory__upside--upper").prop("disabled", true);
-              $(".cards--upper").find("#"+memoryUpperID).find(".shape__checkmark").fadeToggle();
               correctPairs++;
               enableBothUnactive();
               if(correctPairs==lowerCards.length){
@@ -167,18 +161,13 @@ var memoryUpperID;
 
   function removeClasses(){
     enableBothUnactive();
-    for(let i=0; i<upperCards.length; i++){
-      $(".cards--lower").find("#"+(i+1)).removeClass("rotate-flip")
-      $(".cards--upper").find("#"+(i+1)).removeClass("rotate-flip")
-      $(".cards--lower").find("#"+(i+1)).find(".facedown__wrapper").toggleClass("card--correct")
-      $(".cards--upper").find("#"+(i+1)).find(".facedown__wrapper").toggleClass("card--correct")
-      $(".cards--lower").find("#"+(i+1)).find(".memory__upside--lower").prop("disabled", false);
-      $(".cards--upper").find("#"+(i+1)).find(".memory__upside--upper").prop("disabled", false);
-      $(".cards--lower").find("#"+(i+1)).find(".shape__checkmark").fadeToggle();
-      $(".cards--upper").find("#"+(i+1)).find(".shape__checkmark").fadeToggle();
-      memoryUpperID=Math.floor(Math.random() * (100000-1));
-      memoryLowerID=Math.floor(Math.random() * (100000-1));
-    }
+    $(".card__container").each(function(i, el) {
+        $(el).removeClass("rotate-flip");
+        $(el).find(".facedown__wrapper").toggleClass("card--correct");
+        $(el).find(".memory__upside--lower, .memory__upside--upper").prop("disabled", false);
+      });
+    memoryUpperID=Math.floor(Math.random() * (100000-1));
+    memoryLowerID=Math.floor(Math.random() * (100000-1));
   }
 
   function resetGame(){
